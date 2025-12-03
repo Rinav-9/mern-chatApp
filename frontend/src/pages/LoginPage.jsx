@@ -21,33 +21,33 @@ const LoginPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0e0e0e] via-[#171717] to-[#0f0f0f] text-white relative overflow-hidden">
 
-      {/* Background glow blobs */}
-      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[30rem] h-[30rem] bg-gradient-to-br from-stone-700 to-stone-900 opacity-20 blur-3xl rounded-full"></div>
-      <div className="absolute bottom-0 right-0 w-[26rem] h-[26rem] bg-gradient-to-tr from-stone-600 to-stone-400 opacity-10 blur-3xl rounded-full"></div>
+      {/* GLASS BLOBS */}
+      <div className="absolute -top-48 left-1/2 -translate-x-1/2 w-[22rem] sm:w-[30rem] h-[22rem] sm:h-[30rem] bg-gradient-to-br from-stone-700 to-stone-900 opacity-20 blur-3xl rounded-full"></div>
+      <div className="absolute bottom-0 right-0 w-[18rem] sm:w-[26rem] h-[18rem] sm:h-[26rem] bg-gradient-to-tr from-stone-600 to-stone-400 opacity-10 blur-3xl rounded-full"></div>
 
       {/* NAVBAR */}
-      <header className="px-8 sm:px-14 md:px-20 xl:px-28 py-6 flex justify-between items-center z-20 relative">
+      <header className="px-5 sm:px-10 md:px-20 xl:px-28 py-4 sm:py-6 flex justify-between items-center z-20 relative">
         <div
-          className="flex items-center gap-3 cursor-pointer"
+          className="flex items-center gap-2 sm:gap-3 cursor-pointer"
           onClick={() => navigate("/")}
         >
           <div className="p-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/10 shadow-sm">
-            <img src="/chat-bubbles.svg" alt="Logo" className="h-8 invert" />
+            <img src="/chat-bubbles.svg" alt="Logo" className="h-7 sm:h-8 invert" />
           </div>
-          <h1 className="text-3xl font-extrabold tracking-wide">Vartalap</h1>
+          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-wide">Vartalap</h1>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <button
             onClick={() => navigate("/login")}
-            className="px-5 py-2 rounded-xl bg-white/10 border border-white/10 text-stone-200 hover:bg-white/20 backdrop-blur-md transition-all"
+            className="px-4 sm:px-5 py-2 rounded-xl bg-white/10 border border-white/10 text-stone-200 hover:bg-white/20 backdrop-blur-md transition-all text-sm sm:text-base"
           >
             Login
           </button>
 
           <button
             onClick={() => navigate("/signup")}
-            className="px-5 py-2 rounded-xl bg-gradient-to-r from-stone-900 to-stone-700 text-white font-semibold shadow-md hover:shadow-stone-900/40 hover:scale-[1.03] transition-all"
+            className="px-4 sm:px-5 py-2 rounded-xl bg-gradient-to-r from-stone-900 to-stone-700 text-white font-semibold shadow-md hover:scale-[1.03] transition-all text-sm sm:text-base"
           >
             Sign Up
           </button>
@@ -55,21 +55,23 @@ const LoginPage = () => {
       </header>
 
       {/* LOGIN CARD */}
-      <div className="flex justify-center mt-20 px-4 relative z-20">
-        <div className="w-full max-w-md bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-10 shadow-xl">
+      <div className="flex justify-center mt-14 sm:mt-20 px-4 relative z-20">
+        <div className="w-full max-w-sm sm:max-w-md bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 sm:p-10 shadow-xl">
 
           {/* Title */}
-          <div className="text-center mb-8">
-            <h1 className="text-4xl font-extrabold text-white">Welcome Back</h1>
-            <p className="text-stone-300 mt-1">Sign in to continue securely</p>
+          <div className="text-center mb-6 sm:mb-8">
+            <h1 className="text-3xl sm:text-4xl font-extrabold text-white">Welcome Back</h1>
+            <p className="text-stone-300 mt-1 text-sm sm:text-base">
+              Sign in to continue securely
+            </p>
           </div>
 
           {/* FORM */}
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
 
             {/* Email */}
             <div className="space-y-1">
-              <label className="font-medium text-stone-300">Email</label>
+              <label className="font-medium text-stone-300 text-sm sm:text-base">Email</label>
               <div className="relative">
                 <Mail className="absolute left-3 inset-y-0 my-auto text-stone-400 size-5" />
 
@@ -78,14 +80,16 @@ const LoginPage = () => {
                   placeholder="you@example.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full bg-white/10 border border-white/10 p-3 pl-10 rounded-xl focus:outline-none focus:border-stone-500 focus:bg-white/20 transition-all"
+                  className="w-full bg-white/10 border border-white/10 p-3 pl-10 rounded-xl 
+                             focus:outline-none focus:border-stone-500 focus:bg-white/20 
+                             transition-all text-sm sm:text-base"
                 />
               </div>
             </div>
 
             {/* Password */}
             <div className="space-y-1">
-              <label className="font-medium text-stone-300">Password</label>
+              <label className="font-medium text-stone-300 text-sm sm:text-base">Password</label>
               <div className="relative">
                 <Lock className="absolute left-3 inset-y-0 my-auto text-stone-400 size-5" />
 
@@ -96,7 +100,9 @@ const LoginPage = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, password: e.target.value })
                   }
-                  className="w-full bg-white/10 border border-white/10 p-3 pl-10 pr-10 rounded-xl focus:outline-none focus:border-stone-500 focus:bg-white/20 transition-all"
+                  className="w-full bg-white/10 border border-white/10 p-3 pl-10 pr-10 rounded-xl 
+                             focus:outline-none focus:border-stone-500 focus:bg-white/20 
+                             transition-all text-sm sm:text-base"
                 />
 
                 <button
@@ -113,7 +119,9 @@ const LoginPage = () => {
             <button
               type="submit"
               disabled={isLoggingIn}
-              className="w-full py-3 rounded-xl bg-gradient-to-br from-stone-900 to-stone-700 text-white font-semibold shadow-md hover:scale-[1.03] active:scale-95 transition-all flex items-center justify-center gap-2"
+              className="w-full py-3 rounded-xl bg-gradient-to-br from-stone-900 to-stone-700 
+                         text-white font-semibold shadow-md hover:scale-[1.03] active:scale-95 
+                         transition-all flex items-center justify-center gap-2 text-sm sm:text-base"
             >
               {isLoggingIn ? (
                 <>
@@ -127,7 +135,7 @@ const LoginPage = () => {
           </form>
 
           {/* Switch to Sign Up */}
-          <p className="text-center text-stone-300 mt-6">
+          <p className="text-center text-stone-300 mt-5 sm:mt-6 text-sm sm:text-base">
             Don&apos;t have an account?{" "}
             <Link to="/signup" className="text-white font-semibold hover:underline">
               Create Account
