@@ -32,7 +32,7 @@ const LoginPage = () => {
           onClick={() => navigate("/")}
         >
           <div className="p-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/10 shadow-sm">
-            <img src="/shield.svg" alt="Logo" className="h-8 invert" />
+            <img src="/chat-bubbles.svg" alt="Logo" className="h-8 invert" />
           </div>
           <h1 className="text-3xl font-extrabold tracking-wide">Vartalap</h1>
         </div>
